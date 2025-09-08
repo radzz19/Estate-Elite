@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Real Estate Inquiry</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+        }
+        .header { 
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); 
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center; 
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 24px; 
+            font-weight: 600; 
+        }
+        .header p { 
+            margin: 10px 0 0 0; 
+            font-size: 16px; 
+            opacity: 0.9; 
+        }
+        .content { 
+            padding: 30px 20px; 
+        }
+        .section { 
+            margin-bottom: 25px; 
+        }
+        .section h2 { 
+            color: #1e40af; 
+            font-size: 18px; 
+            margin-bottom: 15px; 
+            border-bottom: 2px solid #e5e7eb; 
+            padding-bottom: 5px; 
+        }
+        .info-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+            margin-bottom: 20px; 
+        }
+        .info-item { 
+            background: #f8fafc; 
+            padding: 15px; 
+            border-radius: 8px; 
+            border-left: 4px solid #3b82f6; 
+        }
+        .info-item .label { 
+            font-weight: 600; 
+            color: #1e40af; 
+            font-size: 14px; 
+            margin-bottom: 5px; 
+        }
+        .info-item .value { 
+            color: #374151; 
+            font-size: 16px; 
+        }
+        .message-box { 
+            background: #f8fafc; 
+            border: 1px solid #e5e7eb; 
+            border-radius: 8px; 
+            padding: 20px; 
+            margin: 20px 0; 
+        }
+        .message-box h3 { 
+            margin-top: 0; 
+            color: #1e40af; 
+        }
+        .footer { 
+            background: #f3f4f6; 
+            padding: 20px; 
+            text-align: center; 
+            color: #6b7280; 
+            font-size: 14px; 
+            border-top: 1px solid #e5e7eb; 
+        }
+        .timestamp { 
+            background: #fef3c7; 
+            border: 1px solid #f59e0b; 
+            border-radius: 6px; 
+            padding: 10px; 
+            margin: 15px 0; 
+            font-size: 14px; 
+            text-align: center; 
+        }
+        @media (max-width: 600px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .content { padding: 20px 15px; }
+            .header { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏡 New Property Inquiry</h1>
+            <p>You have received a new inquiry from your real estate website</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>👤 Customer Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label">Full Name</div>
+                        <div class="value">{{user_name}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">Email Address</div>
+                        <div class="value">{{user_email}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">Phone Number</div>
+                        <div class="value">{{user_phone}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">Inquiry Source</div>
+                        <div class="value">{{inquiry_type}}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🏠 Property Requirements</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label">Interest Type</div>
+                        <div class="value">{{property_title}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">Preferred Location</div>
+                        <div class="value">{{property_location}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">Budget Range</div>
+                        <div class="value">{{property_price}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">Property Type</div>
+                        <div class="value">{{property_type}}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="message-box">
+                    <h3>💬 Customer Message</h3>
+                    <p>{{message}}</p>
+                </div>
+            </div>
+            
+            <div class="timestamp">
+                <strong>📅 Inquiry Received:</strong> {{timestamp}}
+            </div>
+            
+            <div class="section">
+                <div style="text-align: center; margin: 20px 0;">
+                    <a href="{{property_link}}" style="background: #3b82f6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600;">View Website</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>🚀 Real Estate Management System</strong></p>
+            <p>This inquiry was sent through your website's contact form</p>
+            <p>Please respond to the customer within 24 hours for the best experience</p>
+        </div>
+    </div>
+</body>
+</html>
